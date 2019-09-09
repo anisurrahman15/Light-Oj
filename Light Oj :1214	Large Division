@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    string s;
+    long long int n,tmp,divi,r,k,len,j;
+    int t;
+    scanf("%d",&t);
+    for ( int i=1; i<=t; i++)
+    {
+       cin>>s>>n;
+
+        tmp=0,k=0,len=0,divi=0,r=0;
+        len=s.size();
+         if(s[0]=='-')
+        {
+            k=1;
+        }
+        else
+        {
+            k=0;
+        }
+        if(n<0)
+        {
+            n=n*(-1);
+        }
+        for (j=k; j<len; j++)
+        {
+            tmp=(s.at(j)-'0')+divi*r;
+            if (tmp%n==0)
+                {divi=0;
+            r=0;}
+            else
+            {
+                r=tmp%n;
+                divi=10;
+            }
+        }
+
+         if(r==0)
+         {
+             printf("Case %d: divisible\n",i);
+         }
+          else
+          {
+            printf("Case %d: not divisible\n",i);
+         }
+
+    }
+return 0;
+}
