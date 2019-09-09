@@ -1,0 +1,23 @@
+#include<iostream>
+#include<stdio.h>
+using  namespace std;
+int main()
+{
+    int t,n,x,sum;
+    scanf("%d",&t);
+    for ( int i=1;i<=t;i++)
+    { scanf(" %d", &x);
+    sum=0;
+    for ( int j=1;j<=x;j++)
+    {n=0;
+    scanf("%d",&n);
+   if (n>0)
+    sum+=n;
+    }
+    if (sum>=0)
+    {printf("Case %d: %d\n",i,sum);
+    }
+
+    }
+return 0;
+}
