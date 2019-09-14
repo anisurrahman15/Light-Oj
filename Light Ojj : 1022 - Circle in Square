@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+#define pi (2*acos(0.0))
+using namespace std;
+int  main ()
+{
+    int t;
+ long double r,carea=0.0,sarea=0.0,ans=0.0;
+    scanf("%d",&t);
+    for ( int i=1;i<=t;i++)
+    {
+       cin>>r;
+        carea=pi*pow(r,2);
+        r=r+r;
+        sarea=pow(r,2);
+        ans=sarea-carea;
+        cout<<"Case "<<i<<": "<<fixed<<setprecision(2)<<ans<<endl;
+    }
+
+    return 0;
+}
