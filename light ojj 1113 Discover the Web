@@ -1,0 +1,71 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+
+
+    int t;
+    string cmd,x;
+    cin >>t;
+    for(int i=1;i<=t;i++)
+    {string cmd,x;
+    stack<string>str1;
+    stack<string>str2;
+               printf("Case %d:\n", i);
+               str1.push("http://www.lightoj.com/");
+        while(cin >> cmd)
+        {
+
+
+        if (cmd=="VISIT")
+        {  cin >>x;
+            cout<<x<<endl;
+
+            str1.push(x);
+            while(!str2.empty())
+            {
+                str2.pop();
+            }
+        }
+        else if (cmd=="BACK")
+        {
+            if (str1.size()<=1)
+            {
+                cout<<"Ignored"<<endl;
+            }
+            else
+            {
+                str2.push(str1.top());
+                str1.pop();
+                cout<<str1.top()<<endl;
+            }
+
+        }
+        else if (cmd=="FORWARD")
+        {
+            if(str2.empty())
+            {
+              cout<<"Ignored"<<endl;
+            }
+            else
+            {
+               str1.push(str2.top());
+                cout<<str1.top()<<endl;
+                str2.pop();
+            }
+        }
+
+   else
+   {
+       break;
+   }
+
+
+
+    }
+
+
+    }
+
+    return 0;
+}
