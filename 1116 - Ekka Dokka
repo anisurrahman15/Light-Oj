@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main  ()
+{
+
+    long long int n,x,y;
+    int t,count;
+    scanf("%d",&t);
+    for( int i=1; i<=t; i++)
+    {
+        scanf("%lld",&n);
+        count=0;
+        if (n%2!=0)
+        {
+            printf("Case %d: Impossible\n",i);
+        }
+        else
+        {
+            for (y=2; y<=n/2; y=y+2)
+            {
+                if (n%y==0)
+                {
+                    x=n/y;
+                    if (x%2!=0 && x*y==n)
+                    {
+                        count=1;
+                        break;
+                    }
+
+                }
+            }
+            if (count==1)
+            {
+                printf("Case %d: %lld %lld\n",i,x,y);
+            }
+            else
+            {
+                printf("Case %d: Impossible\n",i);
+            }
+
+
+        }
+
+
+
+    }
+}
