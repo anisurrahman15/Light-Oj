@@ -1,0 +1,83 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+
+   int t,d,e;
+   char ch;
+   cin>>t;
+   for ( int i=1;i<=t;i++)
+   {
+       int arr_size,c;
+
+       cin>>arr_size>>c;
+         long long int arr[arr_size];
+       for ( int j=0;j<arr_size;j++)
+       {
+           cin>>arr[j];
+
+       }
+       for ( int j=1;j<=c;j++)
+       {
+           cin >>ch;
+           if ( ch=='S')
+           {
+               cin >>d;
+
+
+                 for ( int j=0;j<arr_size;j++)
+       {
+         arr[j]=arr[j]+d;
+
+       }
+
+           }
+           else if (ch=='M')
+            {
+               cin >>d;
+
+
+                 for ( int j=0;j<arr_size;j++)
+       {
+         arr[j]=arr[j]*d;
+
+       }
+       }
+       else if (ch=='D')
+       {
+           cin >>d;
+
+           if (d!=0)
+           {for ( int j=0;j<arr_size;j++)
+       {
+         arr[j]=arr[j]/d;
+
+       }
+       }
+       }
+       else if (ch=='R')
+       {
+           reverse(arr,arr+arr_size);
+       }
+        else if (ch=='P')
+        {
+                cin >>d>>e;
+            swap(arr[d],arr[e]);
+
+
+        }
+
+
+
+   }
+
+printf("Case %d:\n",i);
+for ( int j=0;j<arr_size-1;j++)
+{
+    printf("%d ",arr[j]);
+}
+printf("%d\n",arr[arr_size-1]);
+
+}
+return 0;
+}
