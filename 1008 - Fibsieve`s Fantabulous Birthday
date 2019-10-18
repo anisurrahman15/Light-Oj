@@ -1,0 +1,80 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+
+    long long int t,n,root,cs=1,r,c,middle,low;
+    cin>>t;
+    while(t--)
+    {
+      cin>>n;
+      root=sqrt(n);
+      r=0;
+      c=0;
+
+      if (root %2==0)
+      {
+        if ((root* root) == n && root %2==0)
+        {
+            r=1;
+            c=root;
+
+        }
+        else
+        {low=root;
+        root=root+1;
+        if(n>=(root*root)-low)
+        {r=root;
+        c=((root*root)-n)+1;  }
+        else
+        {
+            c=root;
+            r=n-(low*low);
+        }
+
+        }
+
+
+ cout<<"Case "<<cs<<": "<<c<<" "<<r<<endl;
+      }
+      else
+      {
+           if ((root* root) == n && root%2!=0)
+        {
+            r=root;
+            c=1;
+
+        }
+         else
+        {low=root;
+        root=root+1;
+        if(n>=(root*root)-low)
+        {r=((root*root)-n)+1;
+        c= root; }
+        else
+        {
+            middle=((root*root)-low);
+            c=n-(low*low);
+            r=root;
+        }
+
+        }
+
+
+          cout<<"Case "<<cs<<": "<<c<<" "<<r<<endl;
+
+
+      }
+cs++;
+
+
+
+
+
+
+
+    }
+
+
+    return 0;
+}
