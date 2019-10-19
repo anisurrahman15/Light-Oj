@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+   stack<int>q;
+ long long  arr[23],n;
+ int t,cs=1;
+ arr[0]=1;
+    for ( int i=1;i<=22;i++)
+    {arr[i]=arr[i-1]*i;
+     }
+scanf("%d",&t);
+while(t--)
+{    q = stack<int>();
+    cin>>n;
+    for ( int i=20;i>=0;i--)
+    {   if (n==0)
+        { break; }
+
+        if (arr[i]<=n)
+        { q.push(i);
+            n=n-arr[i];  }
+    }
+    if (n==0)
+    {printf("Case %d: ",cs++);
+        while(!q.empty())
+        {if (q.size()==1)
+              break;
+
+printf("%d!+",q.top());
+           q.pop();
+        }
+printf("%d!\n",q.top());
+    }
+    else
+    {
+    printf("Case %d: impossible\n",cs++);
+    }
+
+
+}
+
+
+
+
+
+    return 0;
+}
