@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+#define PI 3.1416
+using  namespace std;
+int main ()
+{
+    int t,cs=1,ox,oy,ax,ay,bx,by;
+    double a,b,o,angle,ans;
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%d %d %d %d %d %d",&ox,&oy,&ax,&ay,&bx,&by);
+                o=sqrt(((bx-ax)*(bx-ax))+((by-ay)*(by-ay)));
+        a=sqrt(((bx-ox)*(bx-ox))+((by-oy)*(by-oy)));
+        b=sqrt(((ax-ox)*(ax-ox))+((ay-oy)*(ay-oy)));
+//-608910182 1085818948 -442570922
+
+        angle=acos(((a*a)+(b*b)-(o*o)) / (2.0*a*b));
+        ans=angle*a;
+
+    printf("Case %d: %lf\n",cs++,ans);
+    }
+
+    return 0;
+}
