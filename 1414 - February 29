@@ -1,0 +1,41 @@
+#define pc(cs)      cout<<"Case "<<cs<<": "
+#define ps(ans)     cout<<ans;
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    long long int y1,y2,d1,d2,t,cs=1,ans=0,y,z,w;
+    string m1;
+    string m2;
+    char c1,c2;
+    cin>>t;
+    while(t--)
+    {ans=z=w=0;;
+        cin>>m1>>d1>>c1>>y1;
+        cin>>m2>>d2>>c1>>y2;
+            if(m1=="January" || m1=="February")
+        {
+            y1=y1;
+        }
+        else
+        {
+            y1++;
+        }
+        if(m2=="January" || (m2=="February" && d2<29))
+        {
+            y2--;
+        }
+
+           y=(y2/4)-((y1-1)/4);
+            z=(y2/100)-((y1-1)/100);
+            w=(y2/400)-((y1-1)/400);
+      ans=(y-z+w);
+     pc(cs);
+     ps(ans);
+     cout<<endl;
+     cs++;
+
+    }
+
+    return 0;
+}
