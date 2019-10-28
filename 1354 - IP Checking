@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+int convert(int n)
+{
+    int decimalNumber = 0, i = 0, remainder;
+    while (n!=0)
+    {
+        remainder = n%10;
+        n /= 10;
+        decimalNumber += remainder*pow(2,i);
+        ++i;
+    }
+    return decimalNumber;
+}
+int main ()
+{
+  int t,cs=1,a,b,c,d,w,x,y,z,w1,x1,y1,z1;
+  scanf("%d",&t);
+  while(t--)
+  {
+   scanf("%d.%d.%d.%d",&a,&b,&c,&d);
+   scanf("%d.%d.%d.%d",&w,&x,&y,&z);
+
+w1=convert(w);
+x1=convert(x);
+y1=convert(y);
+z1=convert(z);
+if (a==w1 && b==x1 && c==y1 && d==z1)
+{
+    printf("Case %d: Yes\n",cs++);
+}
+else
+      printf("Case %d: No\n",cs++);
+
+
+
+
+  }
+  return 0;
+}
