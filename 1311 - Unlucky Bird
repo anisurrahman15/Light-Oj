@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+
+    int cs=1,n;
+    double v1,v2,v3,a1,a2,s1,s2,t1,t2,t;
+    cin >>n;
+    while(n--)
+    {
+
+                scanf("%lf%lf%lf%lf%lf", &v1, &v2, &v3, &a1, &a2);
+
+
+
+          t1 = v1/a1;
+        t2 = v2/a2;
+
+        if (t1>=t2)
+            t=t1;
+        else
+            t=t2;
+         s1 = (v1*v1)/(2*a1);
+        s2 = (v2*v2)/(2*a2);
+
+                printf("Case %d: %lf %lf\n", cs++, s1+s2, (t*v3));
+
+
+    }
+
+
+
+
+    return 0;
+}
