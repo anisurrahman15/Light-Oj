@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int a,ax,ay,bx,by,cx,cy,dx,dy,area,cs=1,q;
+    scanf("%d",&a);
+    while(a--){
+        scanf("%d%d%d%d%d%d",&ax,&ay,&bx,&by,&cx,&cy);
+        dx=cx+ax-bx;
+        dy=cy+ay-by;
+        q=((ax*by)+(bx*cy)+(cx*dy)+(dx*ay))-((ay*bx)+(by*cx)+(cy*dx)+(dy*ax));
+        q=abs(q);
+        area=0.5*q;
+        printf("Case %d: %d %d %d\n",cs++,dx,dy,area);
+    }
+}
