@@ -1,0 +1,77 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef pair<int, int> pairs;
+int main ()
+{
+    int arr[1005][105],n,t,k,p;
+    set<pair<int, int>>s;
+
+    cin>>t>>n>>k;
+    for ( int i=1; i<=t; i++)
+    {
+        for ( int j=1; j<=n; j++)
+        {
+            cin>>arr[i][j];
+        }
+    }
+if (k==0)
+{
+   for ( int i=1; i<n; i++)
+    {
+        for ( int j=i+1; j<=n; j++)
+        {
+            p=0;
+            for ( int k=1; k<=t; k++)
+            {
+
+                if (arr[k][i]>arr[k][j])
+                {
+                    swap(arr[k][i],arr[k][j]);
+                    if (p==1)
+                        continue;
+                pairs z = make_pair(i,j);
+                    s.insert(z);
+                    p=1;
+                }
+            }
+
+
+        }
+    }
+}
+else
+{
+    for ( int i=1; i<n; i++)
+    {
+        for ( int j=i+1; j<=n; j++)
+        {
+            p=0;
+            for ( int k=1; k<=t; k++)
+            {
+
+                if (arr[k][i]<arr[k][j])
+                {
+                    swap(arr[k][i],arr[k][j]);
+                    if (p==1)
+                        continue;
+                    pairs z=make_pair(j,i);
+                    s.insert(z);
+                    p=1;
+                }
+            }
+
+
+        }
+    }
+}
+cout<<s.size()<<endl;
+    bool found=false;
+for (auto const &x : s) {
+        found = true;
+        cout << x.first << " "
+             << x.second <<endl;
+    }
+
+
+    return 0;
+}
