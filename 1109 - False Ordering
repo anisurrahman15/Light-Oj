@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+struct container
+{
+    int x;
+    int y;
+} arr_container[1005];
+bool sorting(container a,container b )
+{
+    if (a.y == b.y)
+    {
+        return (a.x>b.x);
+    }
+    return a.y<b.y;
+}
+void operation()
+{
+    for ( int i=1; i<=1000; i++)
+    {
+        arr_container[i].x=i;
+
+        for ( int j=i; j<=1000; j+=i)
+        {
+            arr_container[j].y++;
+        }
+    }
+    sort(arr_container,arr_container+1001,sorting);
+}
+//displaY()
+//{
+//    for ( int i=1; i<=1000; i++)
+//    {
+//        cout<<arr_container[i].x<<" "<<arr_container[i].y<<endl;
+//    }
+//
+//
+//}
+int main ()
+{
+    operation();
+    int t,n,cs=1;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        cout<<"Case "<<cs++<<": "<<arr_container[n].x<<endl;
+    }
+
+    return 0;
+}
