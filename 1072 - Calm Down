@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define pi acos(-1)
+int main ()
+{
+    int t,n,cs=1;;
+    double angle,tem,R,r;
+    cin>>t;
+    while(t--)
+    {
+        r=tem=angle=0.0;
+        cin>>R>>n;
+        tem = pi/(float)n;
+        angle=sin(tem);
+        r = (R * angle)/(angle + 1);
+                cout<<"Case "<<cs++<<": "<<fixed<<setprecision(6)<<r<<endl;
+
+    }
+
+
+
+    return 0;
+}
