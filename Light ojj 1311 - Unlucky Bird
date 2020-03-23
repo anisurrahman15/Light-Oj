@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int t,cs=1;
+    double v1,v2,v3,a1,a2,dis,l_t,r_t,time,l_s,r_s,t_s,t_t,b_dis;
+    cin>>t;
+    while( t--)
+    {
+        b_dis=l_t=r_t=time=l_s=t_t=r_s=0.0;
+        cin>>v1>>v2>>v3>>a1>>a2;
+        l_t= v1/a1;
+        r_t=v2/a2;
+
+        t_t=max(l_t,r_t);
+        l_s=0.5 *(a1*(l_t*l_t));
+        r_s=0.5 *(a2*(r_t*r_t));
+
+        t_s= l_s+r_s;
+
+        b_dis= v3*t_t;
+        cout<<"Case "<<cs++<<": "<<fixed<<setprecision(9)<<t_s<<" "<<fixed<<setprecision(9)<<b_dis<<endl;
+    }
+
+
+
+
+
+    return 0;
+}
