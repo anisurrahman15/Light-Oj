@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+int lie(int n)
+{
+    int d= n/5;
+    int r=n%5;
+    if ( r>0)
+        return d+1;
+    else
+        return d;
+}
+int main()
+{
+    int t,c,k,n,tem,cs=1;;
+    cin>>t;
+    while(t--)
+    {
+        tem=c=0;
+        cin>>n;
+        tem = 2;
+        for ( int i =0; i<n; i++)
+        {
+            cin>>k;
+            int dif=(k-tem);
+            if ( dif ==0)
+            {
+                tem = k;
+                continue;
+            }
+            c+=lie(dif);
+            tem =k;
+        }
+        cout<<"Case "<<cs++<<": "<<c<<endl;
+
+    }
+
+    return 0;
+}
