@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+   for ( int i=1;i<=t;i++)
+    {
+        double r1,r2,r3;
+        cin>>r1>>r2>>r3;
+        double x=r1+r2;
+        double y=r2+r3;
+        double z=r3+r1;
+        double s=(x+y+z)/2;
+        double area=sqrt(s*(s-x)*(s-y)*(s-z));
+        double area1=.5*r1*r1*acos((x*x +z*z - y*y )/(2*x*z));
+        double area2=.5*r2*r2*acos((y*y + x*x -z*z)/(2*y*x));
+        double area3=.5*r3*r3*acos((z*z+ y*y -  x*x)/(2*z*y));
+        cout<<"Case "<<i<<": ";
+        printf("%.6f\n",area-(area1+area2+area3));
+    }
+    return 0;
+}
