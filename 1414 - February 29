@@ -1,41 +1,69 @@
-#define pc(cs)      cout<<"Case "<<cs<<": "
-#define ps(ans)     cout<<ans;
 #include<bits/stdc++.h>
+#define ll long long
+#define ou(n) cout<<n
+#define in(n) cin>>n
+#define all(v) (v).begin(),(v).end()
+
+#define spc             printf(" ")
+#define line            printf("\n")
+#define PI              acos(-1.0)  // 3.1415926535897932
+
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+
+#define cs(cs)      cout<<"Case "<<cs<<": "
+
+
 using namespace std;
-int main ()
+inline void file()
 {
-    long long int y1,y2,d1,d2,t,cs=1,ans=0,y,z,w;
-    string m1;
-    string m2;
-    char c1,c2;
-    cin>>t;
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+}
+
+long fun(ll y1,ll y2  )
+{
+    ll a=(y2)/4 -(y1-1)/4 ;
+    ll b= (y2)/100 -(y1-1)/100;
+    ll c= (y2)/400 -(y1-1)/400;
+    return (a-b)+c;
+}
+
+int main()
+{
+    // file() ;
+    int t,cs=1;
+    in(t);
     while(t--)
-    {ans=z=w=0;;
-        cin>>m1>>d1>>c1>>y1;
-        cin>>m2>>d2>>c1>>y2;
-            if(m1=="January" || m1=="February")
+    {
+        string m1,m2;
+        char ch;
+        ll d1,y1;
+        ll d2,y2;
+        cin>>m1>>d1>>ch>>y1;
+        cin>>m2>>d2>>ch>>y2;
+        ll p=fun(y1,y2);
+        if ((y1%4==0 && y1%100!=0) || y1%400==0)
         {
-            y1=y1;
-        }
-        else
-        {
-            y1++;
-        }
-        if(m2=="January" || (m2=="February" && d2<29))
-        {
-            y2--;
-        }
+            if ((m1=="January") || (m1=="February" && d1<=29))
+                p=p;
+            else
+                p=p-1;
 
-           y=(y2/4)-((y1-1)/4);
-            z=(y2/100)-((y1-1)/100);
-            w=(y2/400)-((y1-1)/400);
-      ans=(y-z+w);
-     pc(cs);
-     ps(ans);
-     cout<<endl;
-     cs++;
+        }
+        if ((y2%4==0 && y2%100!=0) || y2%400==0)
+        {
 
+            if ((m2=="January") || (m2=="February" && d2<29))
+                p=p-1;
+
+        }
+        if (p<0)
+            p=0;
+        cs(cs++);
+        ou(p),line ;
     }
-
     return 0;
+
+
 }
