@@ -1,0 +1,39 @@
+///* Bismillahir Rahmanir Rahim*/
+#include<bits/stdc++.h>
+#define ll long long
+#define all(v) (v).begin(),(v).end()
+#define vout(v)  for(int i=0;i<v.size();i++) cout<<v[i]<<" ";
+using namespace std;
+string str="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+int c=0,cs=1;
+void solve()
+{
+    c=0;
+    int n,k;
+    cin>>n>>k;
+    string tem= str.substr(0,n);
+    cout<<"Case "<<cs++<<":\n";
+    do
+    {
+        cout<<tem<<endl;
+        c++;
+    }
+    while(next_permutation(tem.begin(),tem.end()) && c<k);
+ 
+}
+int main()
+{
+//   #ifndef ONLINE_JUDGE
+//        freopen("input.txt", "r", stdin);
+//        freopen("output.txt", "w", stdout);
+//    #endif
+ 
+    int t;
+    cin >> t;
+    while (t--)
+        solve();
+ 
+ 
+    return 0;
+}
+ 
