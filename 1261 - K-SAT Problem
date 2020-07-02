@@ -1,0 +1,79 @@
+///* Bismillahir Rahmanir Rahim*/
+#include<bits/stdc++.h>
+#define ll long long
+#define all(v) (v).begin(),(v).end()
+#define vout(v)  for(int i=0;i<v.size();i++) cout<<v[i]<<" ";
+using namespace std;
+int cs=1;
+void solve()
+{
+    int n,m,k;
+ 
+    cin>>n>>m>>k;
+ 
+    vector<int>v[n+1];
+    for ( int i=0; i<n; i++)
+    {
+        for (int j=0; j<k; j++)
+        {
+            int tem;
+            cin>>tem;
+            v[i].push_back(tem);
+        }
+ 
+    }
+int p;
+cin>>p;
+ 
+    vector<int>mv(m+2,0);
+    for ( int i=0; i<p; i++)
+    {
+        int tem;
+        cin>>tem;
+        if ( tem>0)
+            mv[abs(tem)]=2;
+    }
+ 
+    bool ck= true;
+    for ( int i=0; i<n; i++)
+    {
+        bool pk= false;
+        for ( int j=0; j<k; j++)
+        {
+ 
+            int tem= v[i][j];
+            if (tem>0 && mv[abs(tem)]==2)
+                pk= true;
+            else if (tem<0 && mv[abs(tem)]==0)
+                pk= true;
+ 
+            if (pk)
+                break;
+        }
+        if (!pk)
+        {
+            ck= false;
+            break;
+        }
+    }
+    if (ck)
+        printf("Case %d: Yes\n",cs++);
+    else
+        printf("Case %d: No\n",cs++);
+ 
+ 
+ 
+}
+int main()
+{
+ 
+ 
+    int t;
+    cin >> t;
+    while (t--)
+        solve();
+ 
+ 
+    return 0;
+}
+ 
