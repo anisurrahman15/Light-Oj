@@ -1,0 +1,51 @@
+///* Bismillahir Rahmanir Rahim*/
+#include<bits/stdc++.h>
+#define ll long long
+#define all(v) (v).begin(),(v).end()
+#define vout(v)  for(int i=0;i<v.size();i++) cout<<v[i]<<" ";
+using namespace std;
+int cs=1;
+void solve()
+{
+    vector<ll>arr(10005,0);
+    ll n;
+    cin>>arr[0]>>arr[1]>>arr[2]>>arr[3]>>arr[4]>>arr[5]>>n;
+    ll sum=0;
+    arr[6]=arr[0]+arr[1]+arr[2]+arr[3]+arr[4]+arr[5];
+    sum= arr[6];
+    if ( n<7)
+    {
+        cout<<"Case "<<cs++<<": "<<arr[n]%10000007<<endl;
+ 
+    }
+    else
+    {
+        for ( int i=7; i<=n; i++)
+        {
+            arr[i]=arr[i-1]+arr[i-2]+arr[i-3]+arr[i-4]+arr[i-5]+arr[i-6];
+            arr[i] = arr[i] % 10000007;
+ 
+            sum=arr[i];
+        }
+        cout<<"Case "<<cs++<<": "<<sum%10000007<<endl;
+ 
+    }
+ 
+ 
+}
+int main()
+{
+//   #ifndef ONLINE_JUDGE
+//        freopen("input.txt", "r", stdin);
+//        freopen("output.txt", "w", stdout);
+//    #endif
+//
+    int t;
+    cin >> t;
+    while (t--)
+        solve();
+ 
+ 
+    return 0;
+}
+ 
